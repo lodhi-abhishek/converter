@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Wizard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/style.css">
+</head>
+
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <div class="input-div mb-4">
+            <input type="number" id="user-input" placeholder="Enter number"
+                class="w-full p-2 border border-gray-300 rounded mb-2">
+            <select id="unit-select" class="w-full p-2 border border-gray-300 rounded mb-4">
+                <option value="1">units</option>
+                <option value="1e3">thousand</option>
+                <option value="1e5">lakh</option>
+                <option value="1e7">crore</option>
+                <option value="1e12">lakh crore</option>
+            </select>
+            <button onclick="getValue()"
+                class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">SUBMIT</button>
+        </div>
+
+        <div class="inter-div hidden">
+            <div class="mb-2"><span class="thousand"></span></div>
+            <div class="mb-2"><span class="million"></span></div>
+            <div class="mb-2"><span class="billion"></span></div>
+            <div class="mb-2"><span class="trillion"></span></div>
+        </div>
+
+        <div class="currency-conversion hidden mt-4">
+            <select id="currency-select" class="w-full p-2 border border-gray-300 rounded mb-4">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <!-- Add more currencies as needed -->
+            </select>
+            <button onclick="convertCurrency()"
+                class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 transition duration-300">Convert to
+                Currency</button>
+        </div>
+
+        <div class="currency-result hidden mt-4">
+            <span id="currency-value" class="text-lg font-semibold"></span>
+        </div>
+    </div>
+    <script src="resources/script.js"></script>
+</body>
+
+</html>
